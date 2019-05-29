@@ -1,0 +1,11 @@
+{
+  "name": "basic_node_operations",
+  "version": "1.0.0",
+  "description": "Basic Node Operations Checkpoint",
+  "main": "bash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kekoa Kubli",
+  "license": "ISC"
+}
