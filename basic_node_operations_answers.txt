@@ -1,0 +1,129 @@
+>1. Run the commands sort, wc and uniq on the commands.js file. 
+Explain how they work and what the output was.
+
+A: 
+```sort```: sorts a files based of its ASCII vales
+
+```
+
+
+            done(data);
+            if (err) throw err;
+        const fileName = fullPath[0];
+        done(userInput);
+        fs.readFile(fileName, (err, data) => {
+        });
+      break;
+      break;
+      commandLibrary.cat(userInputArray.slice(1));
+      commandLibrary.echo(userInputArray.slice(1).join(" "));
+     //we will add the functionality of echo next within the object commandLibrary
+     process.stdout.write('\nprompt > ');
+     process.stdout.write(output);
+    "cat": function(fullPath) {
+    "echo": function(userInput) {
+    //the cat command
+    //the echo command
+    case "cat":
+    case "echo":
+    }
+    },
+   //parses the user input to understand which command was typed
+   const command = userInputArray[0];
+   const userInputArray = userInput.split(" ");
+   switch (command) {
+   }
+ //where we will store our commands
+ //where we will store the logic of our commands
+ //write out data
+ const commandLibrary = {
+ function done(output) {
+ function evaluateCmd(userInput) {
+ module.exports.commandLibrary = commandLibrary;
+ module.exports.evaluateCmd = evaluateCmd;
+ }
+ }
+ };
+const fs = require("fs");
+```
+
+```wc```: wc returns the number of lines, next the number of words, finally the number of bytes. 
+
+```
+44     119    1139 commands.js
+```
+
+```uniq```: uniq filters through the file and removes any reapeating lines in the file.
+
+```
+const fs = require("fs");
+
+ //write out data
+ function done(output) {
+     process.stdout.write(output);
+     process.stdout.write('\nprompt > ');
+ }
+
+ //where we will store our commands
+ function evaluateCmd(userInput) {
+   //parses the user input to understand which command was typed
+   const userInputArray = userInput.split(" ");
+   const command = userInputArray[0];
+
+   switch (command) {
+    case "echo":
+     //we will add the functionality of echo next within the object commandLibrary
+      commandLibrary.echo(userInputArray.slice(1).join(" "));
+      break;
+    case "cat":
+      commandLibrary.cat(userInputArray.slice(1));
+      break;
+
+   }
+ }
+
+ //where we will store the logic of our commands
+ const commandLibrary = {
+    //the echo command
+    "echo": function(userInput) {
+        done(userInput);
+    },
+    //the cat command
+    "cat": function(fullPath) {
+        const fileName = fullPath[0];
+        fs.readFile(fileName, (err, data) => {
+            if (err) throw err;
+            done(data);
+        });
+    }
+
+ };
+
+ module.exports.commandLibrary = commandLibrary;
+ module.exports.evaluateCmd = evaluateCmd;
+```
+
+
+>2. Using the pipe (|) connect at least two commands and run it on commands.js. 
+Explain what the output was and why the specific data was outputted.
+
+A: ```wc commands.js |uniq | wc```
+
+regular wc on the files: 44     119    1139
+
+this was the outputfrom the pipeline:  1       4      37
+
+###Programming Questions
+
+```
+function reverseString(str) {
+  let result = [];
+  strArray = str.split(" ");
+  
+  strArray.forEach(i => result.push(i.split('').reverse().join(' ')));
+  
+  console.log(result.join(''));
+  
+  
+}
+```
