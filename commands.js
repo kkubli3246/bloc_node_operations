@@ -55,7 +55,9 @@ const fs = require("fs");
         const fileName = fullPath[0];
         fs.readFile(fileName, "utf8" , (err,data) => {
             if (err) throw err;
-            done(data.split(/\r\n|\r|\n/).slice(0,10).join("").toString());
+            let cut = data.split(/\r\n|\r|\n/).slice(0,10)
+            
+            done(cut.join('\n').toString());
         })
     },
     //tail command - get last 10 lines of a file;
@@ -64,7 +66,7 @@ const fs = require("fs");
         fs.readFile(fileName, "utf8" , (err,data) => {
             if (err) throw err;
             let cut = data.split(/\r\n|\r|\n/);
-            done(data.split(/\r\n|\r|\n/).slice(cut.length - 11 ,data.length - 1).join("").toString());
+            done(data.split(/\r\n|\r|\n/).slice(cut.length - 10 ,data.length - 1).join("\n").toString());
             
         })
     }

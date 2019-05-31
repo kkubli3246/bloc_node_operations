@@ -109,11 +109,16 @@ Explain what the output was and why the specific data was outputted.
 
 A: ```wc commands.js |uniq | wc```
 
-regular wc on the files: 44     119    1139
+- regular wc on the files: 44     119    1139
 
-this was the outputfrom the pipeline:  1       4      37
+- this was the outputfrom the pipeline:  1       4      37
 
-###Programming Questions
+The reason the pipeline output this value was because: 
+1.first we ran the wc command which returned: 76     215    2224 commands.js
+2. next, we ran the uniq command: which didn't remove any lines 
+3. finally, we finished with wc again: 1 - line of code  4 - words      37 - bytes
+
+###Programming Questions #6
 
 ```
 function reverseString(str) {
@@ -122,7 +127,7 @@ function reverseString(str) {
   
   strArray.forEach(i => result.push(i.split('').reverse().join(' ')));
   
-  console.log(result.join(''));
+  console.log(result.join(' '));
   
   
 }
