@@ -125,10 +125,12 @@ function reverseString(str) {
   let result = [];
   strArray = str.split(" ");
   
-  strArray.forEach(i => result.push(i.split('').reverse().join(' ')));
+  strArray.forEach(i => result.push(i.split('').reverse().join('')));
   
   console.log(result.join(' '));
   
   
 }
+
+reverseString("Hello World");
 ```
